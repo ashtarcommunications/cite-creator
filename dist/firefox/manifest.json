@@ -9,7 +9,7 @@
 	"name": "Cite Creator",
 	"short_name": "Cite Creator",
 	"version": "2.0.0",
-	"description": "Constructs debate cites from meta tags or page info and copies to clipboard.",
+	"description": "Constructs debate cites from html tags or page info and copies to clipboard.",
 	"author": "support@paperlessdebate.com",
 	"homepage_url": "https://paperlessdebate.com",
 	"icons": {
