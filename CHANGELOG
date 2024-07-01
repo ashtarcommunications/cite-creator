@@ -1,0 +1,38 @@
+# Cite Creator Changelog
+
+All notable changes to this project will be documented in this file.
+<br /><br />
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2.0.0] - 2024-07-01
+
+### Added
+
+- Added prettier for code formatting
+- Added eslint for linting
+- Automated testing with puppeteer
+- More positioning options for cite box
+- Configurable keyboard shortcuts and better defaults for mac compatibility
+- Support for multiline cites, even though they're not advised
+- Automated build script for packaging extension for each browser store
+- Option to split first/last name in custom cite formats
+- Made cite box minimizable
+- Option to use slashes instead of dashes in date format
+- Debug mode for logging to console
+
+### Changed
+
+- Updated manifest.json to version 3
+- Updated extension to work cross-browser with the web-ext polyfill
+- Refactored the majority of the code to be more modular, handle state management better, etc.
+- Updated icons to a better color for cross-browser use, and added icon sizes for different locations
+- Switched to modern hotkeys library for keyboard shortcuts, removed mousetrap.js
+- Replaced date.js with native date functions
+- Made the version string on the options page dynamic
+- Cite box now reloads automatically whenever options change
+
+## [1.1.1] 2016-03-25
+
+### Changed
+
+- Last version before being put under version control, minor changes from original.

@@ -1,3 +1,5 @@
 *.pem
 *.crx
-
+node_modules/
+coverage/
+src/manifest.json

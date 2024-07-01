@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Test Title</title>
+		<meta name="author" content="Test Author" />
+		<meta name="date" content="January 1, 2000" />
+		<meta name="og:site_name" content="Test Publication" />
+		<link rel="stylesheet" type="text/css" href="cite.css" />
+	</head>
+
+	<body>
+		<p>Test article</p>
+
+		<!-- Manually load all the dependencies the extension normally injects for us -->
+		<script src="vendor/browser-polyfill.min.js"></script>
+		<script src="vendor/hotkeys.min.js"></script>
+		<script src="vendor/full-name-splitter.js"></script>
+
+		<!-- Mocks global browser object for tests, included here so it runs in the right page context -->
+		<script src="test.js"></script>
+
+		<script src="cite.js"></script>
+	</body>
+</html>

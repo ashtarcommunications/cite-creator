@@ -1,0 +1,42 @@
+{
+	"name": "cite-creator",
+	"version": "2.0.0",
+	"description": "Cite Creator",
+	"main": "src/cite.js",
+	"type": "module",
+	"scripts": {
+		"build": "./build.sh",
+		"lint": "eslint .",
+		"web-ext-lint": "cp firefox/manifest.json src/manifest.json && web-ext lint --source-dir src/ && rm src/manifest.json",
+		"format": "prettier . --write",
+		"format-check": "prettier . --check",
+		"dev": "npm run dev-chrome",
+		"dev-chrome": "cp chrome/manifest.json src/manifest.json && web-ext run --source-dir src/ --target chromium && rm src/manifest.json",
+		"dev-firefox": "mkdir -p ~/ff-tmp && cp firefox/manifest.json src/manifest.json && TMPDIR=~/ff-tmp web-ext run --source-dir src/ && rm src/manifest.json && rm -fr ~/ff-tmp",
+		"test": "cp chrome/manifest.json src/manifest.json && vitest watch && rm src/manifest.json",
+		"test-silent": "cp chrome/manifest.json src/manifest.json && vitest --silent && rm src/manifest.json",
+		"test-ci": "cp chrome/manifest.json src/manifest.json && vitest --run && rm src/manifest.json",
+		"prepare": "husky"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ashtarcommunications/cite-creator.git"
+	},
+	"author": "Aaron Hardy <support@paperlessdebate.com>",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/ashtarcommunications/cite-creator/issues"
+	},
+	"homepage": "https://github.com/ashtarcommunications/cite-creator#readme",
+	"devDependencies": {
+		"@speechanddebate/eslint-config-nsda": "^2.0.1",
+		"chai": "^5.1.1",
+		"eslint": "^8.57.0",
+		"husky": "^9.0.11",
+		"jsdom": "^24.1.0",
+		"prettier": "^3.3.2",
+		"puppeteer": "^22.11.1",
+		"vitest": "^1.6.0",
+		"web-ext": "^8.1.0"
+	}
+}

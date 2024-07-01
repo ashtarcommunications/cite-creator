@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="cite.css" />
+		<link rel="stylesheet" type="text/css" href="options.css" />
+		<script src="vendor/browser-polyfill.min.js"></script>
+		<script src="popup.js"></script>
+	</head>
+
+	<body>
+		<div id="cite-popup-wrapper">
+			<h3>Cite Creator</h3>
+			<div class="switch">
+				<input
+					type="checkbox"
+					name="switch"
+					class="switch-checkbox"
+					id="switch"
+					checked
+				/>
+				<label class="switch-label" for="switch">
+					<span class="switch-inner"></span>
+					<span class="switch-switch"></span>
+				</label>
+			</div>
+
+			<div id="instructions">
+				<p>Default shortcuts use Alt on PC, Option on Mac.</p>
+				<code>ctrl+alt+c</code> / <code>ctrl+option+c</code> - Copy the current
+				cite, optionally including any selected text. <br /><br />
+
+				The letter grade on each cite is a rough metric of how confident you
+				should be in its accuracy.<br /><br />
+				To manually modify parts of the cite, select text from the page and
+				press:<br /><br />
+
+				<code>ctrl+alt+1</code> / <code>ctrl+option+1</code> - Author name
+				<br />
+				<code>ctrl+alt+2</code> / <code>ctrl+option+2</code> - Qualifications
+				<br />
+				<code>ctrl+alt+3</code> / <code>ctrl+option+3</code> - Date <br />
+				<code>ctrl+alt+4</code> / <code>ctrl+option+4</code> - Title <br />
+				<code>ctrl+alt+5</code> / <code>ctrl+option+5</code> - Publication
+				<br />
+			</div>
+
+			<br />
+
+			<div id="cite-popup-options">
+				<a id="options-link">Options</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="cite.css" />
+		<link rel="stylesheet" type="text/css" href="options.css" />
+		<script src="vendor/browser-polyfill.min.js"></script>
+		<script src="options.js"></script>
+	</head>
+
+	<body>
+		<div id="options-logo">
+			<img src="icons/48.png" alt="Logo" />
+			<h1>Cite Creator Settings</h1>
+			<br />
+		</div>
+
+		<div class="switch">
+			<input
+				type="checkbox"
+				name="enabled"
+				class="switch-checkbox"
+				id="enabled"
+				checked
+			/>
+			<label class="switch-label" for="enabled">
+				<span class="switch-inner"></span>
+				<span class="switch-switch"></span>
+			</label>
+		</div>
+
+		<div id="instructions">
+			<h2>Instructions</h2>
+			<p>
+				When enabled, Cite Creator attempts to automatically compute a cite for
+				the current page. Default PC shortcuts use Alt, default Mac shortcuts
+				use Option.
+			</p>
+			<code>ctrl+alt+c</code> / <code>ctrl+option+c</code> - Copy the current
+			cite, optionally including any selected text, e.g. card text<br /><br />
+
+			The letter grade on each cite is a rough metric of how confident you
+			should be in its accuracy.<br /><br />
+
+			To manually modify parts of the cite, select text from the page and
+			press:<br /><br />
+
+			<code>ctrl+alt+1</code> / <code>ctrl+option+1</code> - Author name<br />
+			<code>ctrl+alt+2</code> / <code>ctrl+option+2</code> - Qualifications<br />
+			<code>ctrl+alt+3</code> / <code>ctrl+option+3</code> - Date<br />
+			<code>ctrl+alt+4</code> / <code>ctrl+option+4</code> - Title<br />
+			<code>ctrl+alt+5</code> / <code>ctrl+option+5</code> - Publication<br />
+			<br /><br />
+			Cite Creator is designed primarily to produce cites for use in US high
+			school or college debate, especially for use with the
+			<a
+				href="https://paperlessdebate.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				>Verbatim template.</a
+			>
+			<br /><br />
+			It works best on major news websites, and doesn't work in PDF's.<br /><br />
+		</div>
+
+		<div id="options">
+			<h2>Options</h2>
+
+			Position of cite box<br />
+			<select id="position">
+				<option value="right">Bottom Right</option>
+				<option value="left">Bottom Left</option>
+				<option value="top">Top</option>
+				<option value="bottom">Bottom</option>
+			</select>
+			<br /><br />
+
+			<input type="checkbox" name="copy-selected" id="copy-selected" />Copy
+			selected text with cite<br />
+			<br />
+
+			<input type="checkbox" name="suppress-rating" id="suppress-rating" />Don't
+			show ratings<br />
+			<br />
+
+			<input type="checkbox" name="large-font" id="large-font" />Use large font
+			for cite box <br /><br />
+
+			<input type="checkbox" name="use-slashes" id="use-slashes" />Use / instead
+			of - in cite<br />
+			<br />
+
+			<input type="checkbox" name="debug-mode" id="debug-mode" />Debug Mode<br />
+		</div>
+
+		<div id="cite-format-wrapper">
+			<h2>Cite Format</h2>
+			<input
+				id="cite-format-standard"
+				type="radio"
+				name="cite-format"
+				value="standard"
+			/>Standard<br />
+			First Last, Quals, m-d-yyyy, "Title," Publication, URL<br /><br />
+
+			<input
+				id="cite-format-frontloaded"
+				type="radio"
+				name="cite-format"
+				value="frontloaded"
+			/>Frontloaded<br />
+			First Last yy, Quals, m-d-yyyy, "Title," Publication, URL<br /><br />
+
+			<input
+				id="cite-format-twoline"
+				type="radio"
+				name="cite-format"
+				value="twoline"
+			/>Two-Line (not recommended)
+			<br />
+			Last yy<br />
+			(First Last yy, Quals, m-d-yyyy, "Title," Publication, URL)<br /><br />
+
+			<input
+				id="cite-format-custom"
+				type="radio"
+				name="cite-format"
+				value="custom"
+			/>Custom<br />
+
+			<input type="text" name="cite-format" id="custom-cite-format" /><br />
+
+			<p>Enter your custom cite format above, e.g.:</p>
+			<br />
+			<span class="code"
+				>%author%, %quals%, %date%, "%title%," %publication%, %url%, accessed
+				%accessed%</span
+			>
+			<br /><br />
+
+			<p>
+				You shouldn't use
+				<a
+					href="https://docs.paperlessdebate.com/verbatim/cutting-evidence/citations"
+					>two-line cites</a
+				>.
+			</p>
+			<p>
+				Custom formats replace the codes between %'s, but retain all other text
+				and whitespace. You can use the following codes:<br />
+				<strong>%author%</strong> - Author's full name<br />
+				<strong>%first%</strong> - Author's first name (mileage may vary)<br />
+				<strong>%last%</strong> - Author's last name (mileage may vary)<br />
+				<strong>%quals%</strong> - Author qualifications, if any<br />
+				<strong>%date%</strong> - Full date<br />
+				<strong>%y%</strong> - 1 or 2 digit year<br />
+				<strong>%title%</strong> - Article title<br />
+				<strong>%publication%</strong> - Publication<br />
+				<strong>%url%</strong> - Full URL<br />
+				<strong>%accessed%</strong> - Today's date<br />
+				<strong>%linebreak%</strong> - Add a line break<br />
+			</p>
+		</div>
+
+		<div>
+			<h2>Keyboard Shortcuts</h2>
+			<p>
+				Custom keyboard shortcuts must be a single string (no spaces) using
+				<a
+					href="https://wangchujiang.com/hotkeys-js/"
+					target="_blank"
+					rel="noopener noreferrer"
+					>hotkeys syntax</a
+				>, e.g.: <code>ctrl+alt+c</code> or <code>command+option+1</code> or
+				<code>f2</code>. Some shortcuts may conflict with built-in browser
+				shortcuts or other extensions, so only change these if you know what
+				you're doing. Changes require reloading the current page.
+			</p>
+
+			Custom keyboard shortcut for Copy Cite<br />
+			<input type="text" name="shortcut-copy" id="shortcut-copy" /><br />
+
+			Custom keyboard shortcut for Author<br />
+			<input type="text" name="shortcut-author" id="shortcut-author" /><br />
+
+			Custom keyboard shortcut for Quals<br />
+			<input type="text" name="shortcut-quals" id="shortcut-quals" /><br />
+
+			Custom keyboard shortcut for Date<br />
+			<input type="text" name="shortcut-date" id="shortcut-date" /><br />
+
+			Custom keyboard shortcut for Title<br />
+			<input type="text" name="shortcut-title" id="shortcut-title" /><br />
+
+			Custom keyboard shortcut for Publication<br />
+			<input
+				type="text"
+				name="shortcut-publication"
+				id="shortcut-publication"
+			/><br />
+		</div>
+
+		<div id="footer">
+			<a href="https://paperlessdebate.com">Paperless Debate</a>
+			<br />
+			<span id="version">vX.X.X</span><br />
+			<span>
+				Find this extension useful?
+				<a href="https://paperlessdebate.com/donate">Donate</a>.
+			</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+#cite-container {
+	position: fixed;
+	float: none;
+	overflow: auto;
+	clear: both;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid transparent;
+	background-color: #000000;
+	color: #ffffff;
+	opacity: 0.75;
+	z-index: 1000;
+}
+
+.cite-container-left {
+	bottom: 0;
+	left: 0;
+	width: 25%;
+}
+
+.cite-container-right {
+	bottom: 0;
+	right: 0;
+	left: 75%;
+}
+
+.cite-container-top {
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.cite-container-bottom {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#cite-min {
+	float: right;
+	cursor: pointer;
+	margin-right: 0.2em;
+	font-size: 20px;
+}
+
+#cite-close {
+	float: right;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#cite-rating {
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 5px;
+	font-size: 12px;
+}
+
+#cite-content {
+	font-size: 10px;
+	white-space: pre-wrap;
+}
+
+.cite-large-font {
+	font-size: 16px !important;
+}
+
+.cite-green {
+	background-color: #8bbf56;
+}
+
+.cite-yellow {
+	background-color: #bfbf56;
+}
+
+.cite-red {
+	background-color: #bf5656;
+}
+
+.cite-hidden {
+	display: none;
+}
